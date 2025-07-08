@@ -1,14 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { BOTTOM_ROUTES } from '../utils/routlist';
+
+const Tab = createBottomTabNavigator();
 
 const BottomNavigation = () => {
   return (
-    <View>
-      <Text>BottomNavigation</Text>
-    </View>
+    <Tab.Navigator
+      screenOptions={{ headerShown: false, tabBarShowLabel: true }}
+    >
+      {BOTTOM_ROUTES.map(route => (
+        <Tab.Screen
+          key={route.name}
+          name={route.name}
+          component={route.component}
+          options={{
+            ...route.options,
+            tabBarLabel: route.label || route.name,
+          }}
+        />
+      ))}
+    </Tab.Navigator>
   );
 };
 
 export default BottomNavigation;
-
-const styles = StyleSheet.create({});
