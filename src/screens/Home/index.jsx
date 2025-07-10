@@ -6,14 +6,21 @@ import {
   ScrollView,
   TouchableOpacity,
   Image,
+  FlatList,
 } from 'react-native';
 import { ICONS, IMAGES } from '../../utils/appAssets';
 import BASE_COLORS from '../../utils/colors';
 import CustomButton from '../../components/commonComponents/CustomButton';
-import RecentAIResults from '../../components/HomeComponents/RecentAIResults';
-import Icon from 'react-native-vector-icons/Feather';
 import { moderateScale, verticalScale } from 'react-native-size-matters';
+import RecentAIResultItem from '../../components/HomeComponents/RecentAIResultItem';
+import { useNavigation } from '@react-navigation/native';
 const Home = () => {
+  const navigation = useNavigation();
+  const recentResults = [
+    { id: '1', title: 'Fungicide suggestion for wheat' },
+    { id: '2', title: 'Fungicide suggestion for rice' },
+    // more items, if needed
+  ];
   return (
     <ScrollView style={styles.container}>
       {/* Header */}
@@ -58,7 +65,8 @@ const Home = () => {
             </Text>
             <CustomButton
               title="Upgrade to Unlock"
-              onPress={() => Navigation.navigate('Login')}
+              onPress={() => navigation.navigate('subscription')}
+              // onPress={() => navigation.navigate('chat')}
               buttonStyle={{
                 paddingVertical: verticalScale(8),
                 paddingHorizontal: moderateScale(10),
@@ -68,14 +76,6 @@ const Home = () => {
               style={styles.upgradeBtn}
               iconName="lock-closed-outline"
             />
-
-            {/* <TouchableOpacity style={styles.upgradeButton}>
-              <Text style={styles.upgradeButtonText}>
-                {' '}
-                <Image source={ICONS.LOCK} style={styles.lockIcon} /> Upgrade to
-                Unlock
-              </Text>
-            </TouchableOpacity> */}
           </View>
           <View style={styles.imgContainer}>
             <Image source={IMAGES.DOCTOR_iMAGE} style={styles.doctorImage} />
@@ -84,7 +84,26 @@ const Home = () => {
       </View>
 
       {/* AI Results */}
-      <RecentAIResults />
+      <View>
+        <Text style={styles.heading}>Your Recent AI Results</Text>
+        <FlatList
+          data={recentResults.slice(0, 2)}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <RecentAIResultItem
+              title={item.title}
+              onPress={() =>
+                navigation.navigate('ai_result_detail', { result: item })
+              }
+            />
+          )}
+        />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('ai_results_list')}
+        >
+          <Text style={styles.viewAll}>View All</Text>
+        </TouchableOpacity>
+      </View>
       {/* Crop Guide Card */}
       <View style={styles.card}>
         <View>
@@ -233,7 +252,7 @@ const styles = StyleSheet.create({
   },
   viewAll: {
     fontSize: 13,
-    color: '#4CAF50',
+    color: BASE_COLORS.PRIMARY_LIGHT,
   },
   listItem: {
     backgroundColor: '#FFFFFF',
@@ -251,9 +270,10 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 6,
     borderRadius: 12,
-    borderColor: '#E0E0E0',
+    borderColor: BASE_COLORS.PRIMARY_LIGHT,
     borderWidth: 1,
   },
+
   cardContent: {
     marginLeft: 12,
     flex: 1,
@@ -273,6 +293,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#388E3C',
     fontWeight: '400',
+  },
+  container1: { padding: 16 },
+  heading: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#1B5E20',
+    marginBottom: 8,
+  },
+  viewAll: {
+    textAlign: 'right',
+    color: BASE_COLORS.PRIMARY,
+    marginTop: 6,
+    marginBottom: 20,
   },
 });
 

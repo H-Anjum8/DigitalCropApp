@@ -48,11 +48,23 @@ const AppNavigator = () => {
               ),
           )
         ) : (
-          <Stack.Screen
-            name={Routes.Dashboard.name} // ✅ This will now work
-            component={Routes.Dashboard.component}
-            options={Routes.Dashboard.options}
-          />
+          <>
+            <Stack.Screen
+              name={Routes.Dashboard.name}
+              component={Routes.Dashboard.component}
+              options={Routes.Dashboard.options}
+            />
+            {getProtectedScreens()
+              .filter(route => route.name !== 'dashboard')
+              .map(route => (
+                <Stack.Screen
+                  key={route.name}
+                  name={route.name}
+                  component={route.component}
+                  options={route.options}
+                />
+              ))}
+          </>
         )}
       </Stack.Navigator>
     </NavigationContainer>

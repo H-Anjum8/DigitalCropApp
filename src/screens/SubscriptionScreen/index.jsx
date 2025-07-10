@@ -8,6 +8,8 @@ import {
   ScrollView,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import BackButton from '../../components/commonComponents/BackButton';
+import BASE_COLORS from '../../utils/colors';
 // or 'react-native-vector-icons/Ionicons'
 
 const plans = [
@@ -37,10 +39,12 @@ export default function SubscriptionScreen() {
         </View>
         <View style={styles.planTextContainer}>
           <Text style={styles.planTitle}>{plan.title}</Text>
-          <Text style={styles.planPrice}>{plan.price}</Text>
         </View>
         {plan.discount ? (
-          <Text style={styles.discount}>{plan.discount}</Text>
+          <View>
+            <Text style={styles.planPrice}>{plan.price}</Text>
+            <Text style={styles.discount}>{plan.discount}</Text>
+          </View>
         ) : null}
       </TouchableOpacity>
     );
@@ -49,9 +53,7 @@ export default function SubscriptionScreen() {
   return (
     <SafeAreaView style={styles.safe}>
       <ScrollView contentContainerStyle={styles.container}>
-        <TouchableOpacity>
-          <Ionicons name="chevron-back" size={24} />
-        </TouchableOpacity>
+        <BackButton />
 
         <Text style={styles.title}>Choose Your Plan</Text>
         <Text style={styles.subtitle}>
@@ -62,12 +64,17 @@ export default function SubscriptionScreen() {
         {plans.map(renderPlan)}
 
         <View style={styles.benefits}>
-          <Text style={styles.benefit}>✔ AI-Powered Crop Recommendations</Text>
           <Text style={styles.benefit}>
-            ✔ Instant Access to 2025 Crop Guide
+            <Text style={{ color: 'green' }}>{'\u2714'} </Text>AI-Powered Crop
+            Recommendations
           </Text>
           <Text style={styles.benefit}>
-            ✔ Access to Premium Support (with upgrade)
+            <Text style={{ color: 'green' }}>{'\u2714'} </Text>Instant Access to
+            2025 Crop Guide
+          </Text>
+          <Text style={styles.benefit}>
+            <Text style={{ color: 'green' }}>{'\u2714'} </Text>Access to Premium
+            Support
           </Text>
         </View>
 
@@ -82,7 +89,7 @@ export default function SubscriptionScreen() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: BASE_COLORS.WHITE,
   },
   container: {
     padding: 20,
@@ -90,25 +97,26 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: '600',
-    marginTop: 10,
+    marginTop: 60,
+    color: BASE_COLORS.TEXT_GREEN,
   },
   subtitle: {
     color: '#666',
-    fontSize: 14,
+    fontSize: 13,
     marginBottom: 20,
   },
   planContainer: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: BASE_COLORS.PRIMARY_LIGHT,
+    borderRadius: 20,
     padding: 16,
     marginBottom: 12,
     flexDirection: 'row',
     alignItems: 'center',
   },
   planSelected: {
-    borderColor: '#3AA655',
-    backgroundColor: '#E8F5E9',
+    borderColor: BASE_COLORS.PRIMARY,
+    backgroundColor: BASE_COLORS.PRIMARY_LIGHT,
   },
   radioCircle: {
     width: 30,
@@ -125,13 +133,13 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   planPrice: {
-    fontSize: 14,
-    color: '#555',
+    fontSize: 16,
+    color: BASE_COLORS.TEXT_DARKGREEN,
   },
   discount: {
-    fontSize: 13,
-    color: '#3AA655',
-    fontWeight: 'bold',
+    fontSize: 10,
+    color: BASE_COLORS.TEXT_GREEN,
+    fontWeight: '500',
   },
   benefits: {
     marginTop: 20,
@@ -140,7 +148,7 @@ const styles = StyleSheet.create({
   benefit: {
     fontSize: 14,
     marginBottom: 8,
-    color: '#333',
+    color: BASE_COLORS.GRAY,
   },
   button: {
     backgroundColor: '#3AA655',
