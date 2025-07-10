@@ -1,11 +1,13 @@
 import BottomNavigation from '../navigation/BottomNavigation';
 import Login from '../screens/Auth/Login';
 import Signup from '../screens/Auth/Signup';
-import Guide from '../screens/Dashboard/Guide';
-import Home from '../screens/Dashboard/Home';
-import Search from '../screens/Dashboard/Search';
-import Setting from '../screens/Dashboard/Setting';
+import Home from '../screens/Home';
+import Guide from '../screens/Home/Guide';
+import Search from '../screens/Home/Search';
+import Setting from '../screens/Home/Setting';
 import SplashScreen from '../screens/SplashScreen';
+import SubscriptionScreen from '../screens/SubscriptionScreen';
+import { ICONS } from './appAssets';
 
 const Routes = {
   Splash: {
@@ -44,6 +46,15 @@ const Routes = {
     },
     authRequired: true,
   },
+  SubscriptionScreen: {
+    name: 'subscriptionScreen',
+    component: SubscriptionScreen,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: true,
+  },
 };
 
 export const BOTTOM_ROUTES = [
@@ -54,7 +65,18 @@ export const BOTTOM_ROUTES = [
       headerShown: false,
       gestureEnabled: false,
     },
+    icon: ICONS.HOME_WHITE,
     label: 'Home',
+  },
+  {
+    name: 'guide',
+    component: Guide,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    icon: ICONS.GUIDE,
+    label: 'Guide',
   },
   {
     name: 'search',
@@ -63,6 +85,7 @@ export const BOTTOM_ROUTES = [
       headerShown: false,
       gestureEnabled: false,
     },
+    icon: ICONS.SEARCH,
     label: 'Search',
   },
   {
@@ -72,16 +95,8 @@ export const BOTTOM_ROUTES = [
       headerShown: false,
       gestureEnabled: false,
     },
+    icon: ICONS.SETTING,
     label: 'Setting',
-  },
-  {
-    name: 'guide',
-    component: Guide,
-    options: {
-      headerShown: false,
-      gestureEnabled: false,
-    },
-    label: 'Guide',
   },
 ];
 
