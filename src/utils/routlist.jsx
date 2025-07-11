@@ -8,14 +8,11 @@ import Signup from '../screens/Auth/Signup';
 import Home from '../screens/Home';
 import Guide from '../screens/Home/Guide';
 import AIResultDetail from '../screens/Home/HomeScreens/AIResultDetail';
-import AIResultDetailScreen from '../screens/Home/HomeScreens/AIResultDetail';
 import AIResultsList from '../screens/Home/HomeScreens/AIResultsList';
-import AIResultsListScreen from '../screens/Home/HomeScreens/AIResultsList';
 import Chat from '../screens/Home/HomeScreens/Chat';
 import Search from '../screens/Home/Search';
 import Setting from '../screens/Home/Setting';
 import IntroductionScreen from '../screens/IntroductionScreen';
-import IntroductionScreens from '../screens/IntroductionScreen';
 import Experts from '../screens/IntroductionScreen/Experts';
 import InstantAnswer from '../screens/IntroductionScreen/InstantAnswer';
 import SplashScreen from '../screens/SplashScreen';
@@ -152,6 +149,15 @@ const Routes = {
   AIResultDetail: {
     name: 'ai_result_detail',
     component: AIResultDetail,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: true,
+  },
+  Guide: {
+    name: 'crop_guide',
+    component: Guide,
     options: {
       headerShown: false,
       gestureEnabled: false,

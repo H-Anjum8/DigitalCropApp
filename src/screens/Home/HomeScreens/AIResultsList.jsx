@@ -5,11 +5,12 @@ import { View, Text, StyleSheet, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import RecentAIResultItem from '../../../components/HomeComponents/RecentAIResultItem';
 import BASE_COLORS from '../../../utils/colors';
+import BackButton from '../../../components/commonComponents/BackButton';
 
 const AIResultsList = ({ navigation }) => {
   // const navigation = useNavigation();
 
-  const allResults = Array(10)
+  const allResults = Array(7)
     .fill()
     .map((_, i) => ({
       id: i.toString(),
@@ -18,6 +19,7 @@ const AIResultsList = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+      <BackButton />
       <Text style={styles.header}>Recent AI Results</Text>
       <FlatList
         data={allResults}
@@ -40,6 +42,7 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingHorizontal: 6,
     backgroundColor: BASE_COLORS.WHITE,
+    height: '100%',
   },
   header: {
     fontSize: 22,
@@ -47,6 +50,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     marginBottom: 20,
     color: BASE_COLORS.TEXT_GREEN,
+    marginTop: 70,
   },
 });
 

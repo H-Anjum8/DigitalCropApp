@@ -8,7 +8,7 @@ import COLORS from '../../utils/colors';
 const BackButton = ({
   onPress,
   iconColor = COLORS.BLACK,
-  iconSize = 22,
+  iconSize = 2,
   style,
 }) => {
   const navigation = useNavigation();
@@ -20,7 +20,7 @@ const BackButton = ({
     >
       <Ionicons
         name="chevron-back"
-        size={moderateScale(iconSize)}
+        size={moderateScale(iconSize)} // now scales from a base 24
         color={iconColor}
       />
     </TouchableOpacity>
@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
   backBtn: {
     position: 'absolute',
     top: Platform.OS === 'ios' ? verticalScale(50) : verticalScale(30),
-    left: moderateScale(20),
-    width: moderateScale(32),
-    height: moderateScale(32),
+    left: moderateScale(2),
+    width: moderateScale(3),
+    height: moderateScale(3),
     backgroundColor: COLORS.WHITE,
     borderRadius: moderateScale(20),
     borderColor: COLORS.BLACK,

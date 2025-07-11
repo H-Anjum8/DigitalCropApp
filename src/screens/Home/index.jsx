@@ -26,10 +26,8 @@ const Home = () => {
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.headerTitleRow}>
-          <Text style={styles.appName}>
-            Welcome to SmartCropCare{' '}
-            <Image source={ICONS.LEAVES} style={styles.leaveIcon} />
-          </Text>
+          <Text style={styles.appName}>Welcome to SmartCropCare</Text>
+          <Image source={ICONS.LEAVES} style={styles.leaveIcon} />
         </View>
 
         <Image source={ICONS.NOTIFICATION} style={styles.notificationIcon} />
@@ -64,9 +62,10 @@ const Home = () => {
               Message a certified agri-chemical expert directly.
             </Text>
             <CustomButton
-              title="Upgrade to Unlock"
-              onPress={() => navigation.navigate('subscription')}
-              // onPress={() => navigation.navigate('chat')}
+              // title="Upgrade to Unlock"
+              title="Ask an Expert"
+              // onPress={() => navigation.navigate('subscription')}
+              onPress={() => navigation.navigate('chat')}
               buttonStyle={{
                 paddingVertical: verticalScale(8),
                 paddingHorizontal: moderateScale(10),
@@ -116,7 +115,7 @@ const Home = () => {
           <Text style={styles.cardDescription}>
             Explore the full PDF guide with easy search and navigation.
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('crop_guide')}>
             <Text style={styles.viewGuideText}>View Guide</Text>
           </TouchableOpacity>
         </View>
@@ -135,15 +134,18 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     position: 'relative',
   },
+  headerTitleRow: {},
   appName: {
     fontSize: 24,
     fontWeight: 500,
     color: BASE_COLORS.TEXT_GREEN,
   },
   leaveIcon: {
-    width: 30,
-    height: 30,
-    lineHeight: 50,
+    width: 50,
+    height: 50,
+    top: 18,
+    left: 210,
+    position: 'absolute',
   },
   notificationIcon: {
     width: 25,

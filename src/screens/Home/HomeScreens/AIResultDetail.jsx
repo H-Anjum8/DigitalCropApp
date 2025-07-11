@@ -6,15 +6,14 @@ import BASE_COLORS from '../../../utils/colors';
 import { useNavigation } from '@react-navigation/native';
 import CustomButton from '../../../components/commonComponents/CustomButton';
 import { moderateScale, verticalScale } from 'react-native-size-matters';
+import BackButton from '../../../components/commonComponents/BackButton';
 
 const AIResultDetail = ({ route }) => {
   const { result } = route.params;
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      {/* <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Icon name="arrow-back" size={24} color="#1B5E20" />
-      </TouchableOpacity> */}
+      <BackButton />
       <Text style={styles.title}>Recent AI Result</Text>
       <View style={styles.resultBox}>
         <Icon name="search-outline" size={22} color={BASE_COLORS.PRIMARY} />
@@ -22,13 +21,15 @@ const AIResultDetail = ({ route }) => {
       </View>
       <Text style={styles.description}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et urna
-        nec justo convallis facilisis. Morbi convallis convallis diam.
+        nec justo convallis facilisis. Morbi convallis convallis diam. Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Fusce et urna nec
+        justo convallis facilisis. Morbi convallis convallis diam.
       </Text>
       <CustomButton
         title="View More Info"
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.navigate('ai_results_list')}
         buttonStyle={{
-          paddingVertical: verticalScale(8),
+          paddingVertical: verticalScale(12),
           paddingHorizontal: moderateScale(10),
           alignSelf: 'flex-start',
         }}
@@ -40,7 +41,7 @@ const AIResultDetail = ({ route }) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 15,
     backgroundColor: BASE_COLORS.WHITE,
     height: '100%',
   },
@@ -49,6 +50,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginVertical: 10,
     color: BASE_COLORS.TEXT_GREEN,
+    marginTop: 70,
   },
   resultBox: {
     flexDirection: 'row',

@@ -1,4 +1,5 @@
 const images = {
+  SPLASH_SCREEN: require('../assets/Splash_screen.png'),
   DOCTOR_iMAGE: require('../assets/doctorImage.png'),
   // leafpattern: require('../assets/leafpattern.png'),
   FARMER: require('../assets/farmer.png'),
