@@ -175,10 +175,9 @@ export default Guide;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: BASE_COLORS.WHITE,
     paddingTop: 30,
     paddingHorizontal: 16,
-    marginBottom: 30,
   },
   headerTitleRow: {
     marginBottom: 20,

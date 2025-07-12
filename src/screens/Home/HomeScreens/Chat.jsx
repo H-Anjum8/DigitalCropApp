@@ -175,6 +175,7 @@ const styles = StyleSheet.create({
     padding: 12,
     borderTopWidth: 0.5,
     borderColor: BASE_COLORS.PRIMARY_LIGHT,
+    marginBottom: 10,
   },
   plusIcon: {
     backgroundColor: BASE_COLORS.PRIMARY,
@@ -191,7 +192,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   BackButton: {
-    marginTop: -17,
+    marginTop: -26,
   },
 });
 
