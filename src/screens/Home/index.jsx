@@ -92,9 +92,7 @@ const Home = () => {
               Message a certified agri-chemical expert directly.
             </Text>
             <CustomButton
-              // title="Upgrade to Unlock"
               title="Ask an Expert"
-              // onPress={() => navigation.navigate('subscription')}
               onPress={() => navigation.navigate('chat')}
               buttonStyle={{
                 paddingVertical: verticalScale(8),
@@ -103,8 +101,20 @@ const Home = () => {
               }}
               textStyle={{ fontSize: moderateScale(10) }}
               style={styles.upgradeBtn}
-              iconName="lock-closed-outline"
+              iconName="chatbox-outline"
             />
+            {/* <CustomButton
+              title="Upgrade to Unlock"
+              onPress={() => navigation.navigate('subscription')}
+              buttonStyle={{
+                paddingVertical: verticalScale(8),
+                paddingHorizontal: moderateScale(10),
+                alignSelf: 'flex-start',
+              }}
+              textStyle={{ fontSize: moderateScale(10) }}
+              style={styles.upgradeBtn}
+              iconName="lock-closed-outline"
+            /> */}
           </View>
           <View style={styles.imgContainer}>
             <Image source={IMAGES.DOCTOR_iMAGE} style={styles.doctorImage} />

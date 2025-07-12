@@ -39,8 +39,8 @@ const SubcriptionDone = () => {
       <CustomButton
         title="Go to Home"
         onPress={() => navigation.navigate('dashboard')}
-        buttonStyle={{ paddingHorizontal: moderateScale(120) }}
-        textStyle={{ fontSize: moderateScale(11) }}
+        buttonStyle={{ paddingHorizontal: moderateScale(110) }}
+        textStyle={{ fontSize: moderateScale(12) }}
       />
     </View>
   );
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     padding: 22,
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 80,
   },
   checkImage: {
     width: moderateScale(120),

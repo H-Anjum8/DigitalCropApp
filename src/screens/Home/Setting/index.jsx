@@ -16,38 +16,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import CustomButton from '../../../components/commonComponents/CustomButton';
 import appAssets from '../../../utils/appAssets';
 import BASE_COLORS from '../../../utils/colors';
-
+import { menuItems } from '../../../utils/staticData';
 const Setting = () => {
   const navigation = useNavigation();
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-
-  const menuItems = [
-    {
-      title: 'Personal Information',
-      icon: 'person-outline',
-      nav_link: 'personal_information',
-    },
-    {
-      title: 'Subscription Plan',
-      icon: 'card-outline',
-      nav_link: 'current_plan',
-    },
-    {
-      title: 'Change Password',
-      icon: 'lock-closed-outline',
-      nav_link: 'change_password',
-    },
-    {
-      title: 'Privacy Policy',
-      icon: 'document-text-outline',
-      nav_link: 'privacy_policy',
-    },
-    {
-      title: 'Terms & Conditions',
-      icon: 'document-text-outline',
-      nav_link: 'terms_and_conditions',
-    },
-  ];
 
   const handleLogoutConfirm = () => {
     setShowLogoutModal(false);

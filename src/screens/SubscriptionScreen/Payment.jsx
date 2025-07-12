@@ -162,10 +162,10 @@ const Payment = () => {
               title="Pay & Activate Account"
               onPress={handleSubmit}
               buttonStyle={{
-                paddingHorizontal: moderateScale(90),
+                paddingHorizontal: moderateScale(80),
                 marginTop: 100,
               }}
-              textStyle={{ fontSize: moderateScale(10) }}
+              textStyle={{ fontSize: moderateScale(12) }}
             />
           </>
         )}
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     backgroundColor: BASE_COLORS.WHITE,
   },
   heading: {
-    fontSize: 25,
+    fontSize: 23,
     fontWeight: '600',
     fontFamily: 'Poppins_600SemiBold',
     marginTop: verticalScale(52),
@@ -271,6 +271,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: 'Poppins_400Regular',
     marginBottom: 5,
-    marginTop: -14,
+    marginTop: -20,
   },
 });

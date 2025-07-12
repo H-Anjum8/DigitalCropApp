@@ -142,7 +142,10 @@ const Signup = () => {
               title="Sign Up"
               onPress={handleSubmit}
               disabled={!agreeTerms}
-              buttonStyle={{ paddingHorizontal: moderateScale(128) }}
+              buttonStyle={{
+                paddingHorizontal: moderateScale(128),
+                marginTop: 20,
+              }}
               textStyle={{ fontSize: moderateScale(14) }}
             />
           </>
@@ -173,7 +176,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontFamily: 'Poppins_600SemiBold',
     marginBottom: 5,
-    fontWeight: '700',
+    fontWeight: '600',
     marginTop: 60,
     color: BASE_COLORS.TEXT_GREEN,
   },

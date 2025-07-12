@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.WHITE,
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: verticalScale(40),
+    marginBottom: 80,
   },
   illustration: {
     width: width * 0.8,

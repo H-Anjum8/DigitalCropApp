@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
   header: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: 500,
     color: BASE_COLORS.TEXT_GREEN,
     marginBottom: 10,
     marginTop: 60,
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     color: BASE_COLORS.TEXT_RED,
     fontSize: 12,
     fontFamily: 'Poppins_400Regular',
-    marginTop: -12,
+    marginTop: -4,
   },
 });
 

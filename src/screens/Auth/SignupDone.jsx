@@ -32,8 +32,8 @@ const SignupDone = () => {
 
       {/* Subtext */}
       <Text style={styles.subText}>
-        Your account is ready to use. You will be redirected to the Home Page in
-        a few seconds.
+        Your account is ready to use. You will be redirected {'\n'} to the Home
+        Page in a few seconds.
       </Text>
 
       {/* Continue button */}
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: BASE_COLORS.WHITE,
     padding: 22,
     alignItems: 'center',
+    marginBottom: 80,
     justifyContent: 'center',
   },
   checkImage: {
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(4),
   },
   subText: {
-    fontSize: 13,
+    fontSize: 10,
     textAlign: 'center',
     fontFamily: 'Poppins_400Regular',
     color: BASE_COLORS.TEXT_INPUT_FIELD,

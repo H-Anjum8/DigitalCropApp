@@ -13,14 +13,8 @@ import BASE_COLORS from '../../utils/colors';
 import CustomButton from '../../components/commonComponents/CustomButton';
 import { moderateScale, verticalScale } from 'react-native-size-matters';
 import { useNavigation } from '@react-navigation/native';
+import { plans } from '../../utils/staticData';
 // or 'react-native-vector-icons/Ionicons'
-
-const plans = [
-  { title: 'Monthly', price: '$9.99', discount: '' },
-  { title: 'Quarterly', price: '$24.99', discount: 'Save 15%' },
-  { title: 'Biannual', price: '$47.99', discount: 'Save 20%' },
-  { title: 'Annual', price: '$89.99', discount: 'Save 25%' },
-];
 
 export default function SubscriptionScreen() {
   const navigation = useNavigation();
@@ -86,9 +80,10 @@ export default function SubscriptionScreen() {
           title="Continue To Payment"
           onPress={() => navigation.navigate('payment', { plan: selectedPlan })}
           buttonStyle={{
-            paddingHorizontal: moderateScale(90),
+            paddingHorizontal: moderateScale(70),
             marginBottom: 20,
           }}
+          textStyle={{ fontSize: moderateScale(14) }}
         />
       </ScrollView>
     </SafeAreaView>

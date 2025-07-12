@@ -14,7 +14,6 @@ import { verticalScale, moderateScale } from 'react-native-size-matters';
 import BASE_COLORS from '../../../utils/colors';
 import BackButton from '../../../components/commonComponents/BackButton';
 import CustomTextInput from '../../../components/commonComponents/CustomTextInput';
-import CustomButton from '../../../components/commonComponents/CustomButton';
 import { getValidationSchema } from '../../../utils/validationSchema';
 
 const PersonalInformation = () => {
@@ -92,7 +91,7 @@ const PersonalInformation = () => {
                 <Text style={styles.error}>{errors.phone}</Text>
               )}
 
-              <CustomButton
+              {/* <CustomButton
                 title="Save Info"
                 onPress={handleSubmit}
                 buttonStyle={{
@@ -100,7 +99,7 @@ const PersonalInformation = () => {
                   paddingHorizontal: moderateScale(125),
                 }}
                 textStyle={{ fontSize: moderateScale(12) }}
-              />
+              /> */}
             </ScrollView>
           </KeyboardAvoidingView>
         )}

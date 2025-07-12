@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     color: BASE_COLORS.TEXT_GREEN,
   },
   description: {
-    fontSize: moderateScale(12),
+    fontSize: moderateScale(11),
     textAlign: 'center',
     color: BASE_COLORS.TEXT_SECONDARY,
     marginBottom: 40,

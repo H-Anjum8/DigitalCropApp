@@ -79,11 +79,11 @@ const SignupOTPVerify = () => {
           </Text>
 
           <CustomButton
-            title="Verify"
+            title="Confirm"
             onPress={handleSubmit}
             buttonStyle={{
               marginTop: verticalScale(40),
-              paddingHorizontal: moderateScale(110),
+              paddingHorizontal: moderateScale(120),
             }}
             textStyle={{ fontSize: moderateScale(14) }}
           />
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   phoneMessage: {
     textAlign: 'center',
     marginTop: verticalScale(20),
-    fontSize: moderateScale(12),
+    fontSize: moderateScale(10),
     color: BASE_COLORS.TEXT_SECONDARY,
     fontFamily: 'Poppins_400Regular',
   },

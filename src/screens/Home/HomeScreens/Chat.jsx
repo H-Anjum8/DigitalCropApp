@@ -15,33 +15,7 @@ import { useRoute } from '@react-navigation/native';
 import BackButton from '../../../components/commonComponents/BackButton';
 import BASE_COLORS from '../../../utils/colors';
 import { IMAGES } from '../../../utils/appAssets';
-
-const initialMessages = [
-  { id: '1', type: 'sent', text: 'Lorem ipsum dolor sit amet consectetur.' },
-  {
-    id: '2',
-    type: 'received',
-    text: 'Lorem ipsum dolor sit amet consectetur.',
-  },
-  { id: '3', type: 'sent', text: 'Lorem ipsum dolor sit amet consectetur.' },
-  {
-    id: '4',
-    type: 'received',
-    text: 'Lorem ipsum dolor sit amet consectetur.',
-  },
-  { id: '5', type: 'sent', text: 'Lorem ipsum dolor sit amet consectetur.' },
-  {
-    id: '6',
-    type: 'received',
-    text: 'Lorem ipsum dolor sit amet consectetur.',
-  },
-  { id: '7', type: 'sent', text: 'Lorem ipsum dolor sit amet consectetur.' },
-  {
-    id: '8',
-    type: 'received',
-    text: 'Lorem ipsum dolor sit amet consectetur.',
-  },
-];
+import { initialMessages } from '../../../utils/staticData';
 
 const Chat = ({ navigation }) => {
   const route = useRoute();
@@ -151,12 +125,14 @@ const Chat = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: BASE_COLORS.WHITE },
+  container: { flex: 1, backgroundColor: BASE_COLORS.WHITE, marginBottom: 10 },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 60,
-    paddingVertical: 12,
+    paddingVertical: 4,
+    marginTop: 10,
+
     borderBottomWidth: 0.5,
     borderColor: BASE_COLORS.PRIMARY_LIGHT,
   },
