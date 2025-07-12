@@ -14,12 +14,9 @@ import BackButton from '../../../components/commonComponents/BackButton';
 import CustomOTPInput from '../../../components/commonComponents/CustomOTPInput';
 import CustomButton from '../../../components/commonComponents/CustomButton';
 import BASE_COLORS from '../../../utils/colors';
+import { getValidationSchema } from '../../../utils/validationSchema';
 
 const { height } = Dimensions.get('window');
-
-const validationSchema = Yup.object().shape({
-  otp: Yup.string().length(5, 'Enter 5 digit code').required('OTP is required'),
-});
 
 const VerifyOTP = () => {
   const navigation = useNavigation();
@@ -72,7 +69,7 @@ const VerifyOTP = () => {
 
       <Formik
         initialValues={{ otp: '' }}
-        validationSchema={validationSchema}
+        validationSchema={getValidationSchema('verifyotp')}
         onSubmit={handleSubmit}
       >
         {({ handleSubmit, values, errors, touched, setFieldValue }) => (

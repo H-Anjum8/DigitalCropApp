@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { moderateScale, verticalScale } from 'react-native-size-matters';
-import BASE_COLORS from '../../utils/colors';
-import CustomButton from '../../components/commonComponents/CustomButton';
-import { ICONS } from '../../utils/appAssets';
 
-const SignupDone = () => {
+import { moderateScale, verticalScale } from 'react-native-size-matters';
+import { ICONS } from '../../utils/appAssets';
+import CustomButton from '../../components/commonComponents/CustomButton';
+import BASE_COLORS from '../../utils/colors';
+
+const SubcriptionDone = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -28,26 +29,25 @@ const SignupDone = () => {
       />
 
       {/* Heading */}
-      <Text style={styles.heading}>Congratulations</Text>
+      <Text style={styles.heading}>You’re All Set!</Text>
 
       {/* Subtext */}
       <Text style={styles.subText}>
-        Your account is ready to use. You will be redirected to the Home Page in
-        a few seconds.
+        Welcome to SmartCropCare. Your{'\n'} account is now active.
       </Text>
 
       {/* Continue button */}
       <CustomButton
-        title="Continue"
-        onPress={() => navigation.navigate('subscription')}
-        buttonStyle={{ paddingHorizontal: moderateScale(122) }}
-        textStyle={{ fontSize: moderateScale(14) }}
+        title="Go to Home"
+        onPress={() => navigation.navigate('dashboard')}
+        buttonStyle={{ paddingHorizontal: moderateScale(120) }}
+        textStyle={{ fontSize: moderateScale(11) }}
       />
     </View>
   );
 };
 
-export default SignupDone;
+export default SubcriptionDone;
 
 const styles = StyleSheet.create({
   container: {
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 600,
     fontFamily: 'Poppins_600SemiBold',
-    color: BASE_COLORS.BLACK,
+    color: BASE_COLORS.TEXT_GREEN,
     marginBottom: verticalScale(4),
   },
   subText: {

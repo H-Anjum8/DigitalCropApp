@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   const [showSplash, setShowSplash] = useState(true);
-  const isAuthenticated = true; // Replace with real auth logic
+  const isAuthenticated = false; // Replace with real auth logic
 
   useEffect(() => {
     const timer = setTimeout(() => {

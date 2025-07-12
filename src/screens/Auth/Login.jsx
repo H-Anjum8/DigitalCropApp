@@ -8,22 +8,7 @@ import COLORS from '../../utils/colors';
 import BackButton from '../../components/commonComponents/BackButton';
 import CustomTextInput from '../../components/commonComponents/CustomTextInput';
 import CustomButton from '../../components/commonComponents/CustomButton';
-
-const LoginSchema = Yup.object().shape({
-  email: Yup.string()
-    .required('Phone number or email is required')
-    .test(
-      'email-or-phone',
-      'Enter a valid email or phone number',
-      value =>
-        !!value &&
-        (Yup.string().email().isValidSync(value) ||
-          /^[0-9]{10,14}$/.test(value)),
-    ),
-  password: Yup.string()
-    .min(6, 'Minimum 6 characters')
-    .required('Password required'),
-});
+import { getValidationSchema } from '../../utils/validationSchema';
 
 const Login = () => {
   const Navigation = useNavigation();
@@ -38,7 +23,7 @@ const Login = () => {
 
       <Formik
         initialValues={{ email: '', password: '' }}
-        validationSchema={LoginSchema}
+        validationSchema={getValidationSchema('login')}
         onSubmit={values => {
           console.log('Logging in with:', values);
           Navigation.navigate('dashboard');
@@ -147,7 +132,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: 'Poppins_400Regular',
     marginBottom: 12,
-    marginTop: -12,
+    marginTop: -4,
   },
   signupContainer: {
     flexDirection: 'row',

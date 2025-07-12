@@ -8,14 +8,7 @@ import CustomTextInput from '../../../components/commonComponents/CustomTextInpu
 import CustomButton from '../../../components/commonComponents/CustomButton';
 import BASE_COLORS from '../../../utils/colors';
 import BackButton from '../../../components/commonComponents/BackButton';
-
-// Yup Validation
-const validationSchema = Yup.object({
-  password: Yup.string().min(6, 'Too short!').required('Required'),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password')], 'Passwords must match')
-    .required('Required'),
-});
+import { getValidationSchema } from '../../../utils/validationSchema';
 
 export default function NewPassword() {
   const navigation = useNavigation();
@@ -30,7 +23,7 @@ export default function NewPassword() {
 
       <Formik
         initialValues={{ password: '', confirmPassword: '' }}
-        validationSchema={validationSchema}
+        validationSchema={getValidationSchema('newpassword')}
         onSubmit={values => {
           console.log('Submitted:', values);
           navigation.navigate('reset_pass_success');

@@ -7,6 +7,8 @@ const images = {
   VERIFIED: require('../assets/verified.png'),
   USER1: require('../assets/user1.png'),
   USER2: require('../assets/user2.jpg'),
+  SEARCH_LENS: require('../assets/search_lens.png'),
+  PROFILE: require('../assets/user2.jpg'),
 };
 
 const icons = {
@@ -19,6 +21,7 @@ const icons = {
   STAR: require('../assets/icons/star.png'),
   BOOK: require('../assets/icons/book.png'),
   TRUE: require('../assets/icons/true.png'),
+  TICK: require('../assets/icons/tick.png'),
 };
 
 // Export assets

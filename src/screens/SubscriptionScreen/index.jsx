@@ -10,6 +10,9 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import BackButton from '../../components/commonComponents/BackButton';
 import BASE_COLORS from '../../utils/colors';
+import CustomButton from '../../components/commonComponents/CustomButton';
+import { moderateScale, verticalScale } from 'react-native-size-matters';
+import { useNavigation } from '@react-navigation/native';
 // or 'react-native-vector-icons/Ionicons'
 
 const plans = [
@@ -20,6 +23,7 @@ const plans = [
 ];
 
 export default function SubscriptionScreen() {
+  const navigation = useNavigation();
   const [selectedPlan, setSelectedPlan] = useState('Quarterly');
 
   const renderPlan = plan => {
@@ -40,12 +44,12 @@ export default function SubscriptionScreen() {
         <View style={styles.planTextContainer}>
           <Text style={styles.planTitle}>{plan.title}</Text>
         </View>
-        {plan.discount ? (
-          <View>
-            <Text style={styles.planPrice}>{plan.price}</Text>
+        <View>
+          <Text style={styles.planPrice}>{plan.price}</Text>
+          {plan.discount ? (
             <Text style={styles.discount}>{plan.discount}</Text>
-          </View>
-        ) : null}
+          ) : null}
+        </View>
       </TouchableOpacity>
     );
   };
@@ -57,7 +61,7 @@ export default function SubscriptionScreen() {
 
         <Text style={styles.title}>Choose Your Plan</Text>
         <Text style={styles.subtitle}>
-          Unlock powerful AI tools and expert support with a flexible
+          Unlock powerful AI tools and expert support {'\n'} with a flexible
           subscription.
         </Text>
 
@@ -78,9 +82,14 @@ export default function SubscriptionScreen() {
           </Text>
         </View>
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Continue To Payment</Text>
-        </TouchableOpacity>
+        <CustomButton
+          title="Continue To Payment"
+          onPress={() => navigation.navigate('payment', { plan: selectedPlan })}
+          buttonStyle={{
+            paddingHorizontal: moderateScale(90),
+            marginBottom: 20,
+          }}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -95,22 +104,22 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: '600',
     marginTop: 60,
     color: BASE_COLORS.TEXT_GREEN,
   },
   subtitle: {
     color: '#666',
-    fontSize: 13,
-    marginBottom: 20,
+    fontSize: 12,
+    marginBottom: 30,
   },
   planContainer: {
     borderWidth: 2,
     borderColor: BASE_COLORS.PRIMARY_LIGHT,
     borderRadius: 20,
-    padding: 16,
-    marginBottom: 12,
+    padding: 14,
+    marginBottom: 8,
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -133,20 +142,22 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   planPrice: {
-    fontSize: 16,
-    color: BASE_COLORS.TEXT_DARKGREEN,
+    fontSize: 14,
+
+    color: BASE_COLORS.TEXT_GREEN,
   },
   discount: {
+    alignSelf: 'flex-end',
     fontSize: 10,
-    color: BASE_COLORS.TEXT_GREEN,
+    color: BASE_COLORS.TEXT_DARKGREEN,
     fontWeight: '500',
   },
   benefits: {
     marginTop: 20,
-    marginBottom: 30,
+    marginBottom: 90,
   },
   benefit: {
-    fontSize: 14,
+    fontSize: 12,
     marginBottom: 8,
     color: BASE_COLORS.GRAY,
   },

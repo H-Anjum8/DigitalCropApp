@@ -40,12 +40,14 @@ const data = [
   {
     crop: 'General',
     title: 'General Guidelines',
-    content: 'Always calibrate your sprayer before applying chemicals...',
+    content:
+      'Yellow rust, also known as stripe rust, appears as yellowish-orange stripes of spores on the leaves and leaf sheaths. It spreads rapidly under cool and humid conditions, especially in early winter. Effective control involves spraying Tebuconazole 25.9% EC at a dosage of 300 ml per acre. Application should begin when the initial rust spots appear, and repeated after 12–15 days if conditions persist. Timely application can prevent heavy losses and reduce the risk of epidemic outbreaks.',
   },
   {
     crop: 'Cotton',
     title: 'Bollworm',
-    content: 'Bollworm affects cotton crops and damages bolls...',
+    content:
+      'Yellow rust, also known as stripe rust, appears as yellowish-orange stripes of spores on the leaves and leaf sheaths. It spreads rapidly under cool and humid conditions, especially in early winter. Effective control involves spraying Tebuconazole 25.9% EC at a dosage of 300 ml per acre. Application should begin when the initial rust spots appear, and repeated after 12–15 days if conditions persist. Timely application can prevent heavy losses and reduce the risk of epidemic outbreaks.',
   },
   {
     crop: 'Maize',
@@ -55,17 +57,20 @@ const data = [
   {
     crop: 'Rice',
     title: 'Sheath Blight',
-    content: 'Sheath blight causes oval lesions with gray centers...',
+    content:
+      'Yellow rust, also known as stripe rust, appears as yellowish-orange stripes of spores on the leaves and leaf sheaths. It spreads rapidly under cool and humid conditions, especially in early winter. Effective control involves spraying Tebuconazole 25.9% EC at a dosage of 300 ml per acre. Application should begin when the initial rust spots appear, and repeated after 12–15 days if conditions persist. Timely application can prevent heavy losses and reduce the risk of epidemic outbreaks.',
   },
   {
     crop: 'Wheat',
     title: 'Leaf Spot',
-    content: 'Leaf spot causes necrotic areas on leaves...',
+    content:
+      'Yellow rust, also known as stripe rust, appears as yellowish-orange stripes of spores on the leaves and leaf sheaths. It spreads rapidly under cool and humid conditions, especially in early winter. Effective control involves spraying Tebuconazole 25.9% EC at a dosage of 300 ml per acre. Application should begin when the initial rust spots appear, and repeated after 12–15 days if conditions persist. Timely application can prevent heavy losses and reduce the risk of epidemic outbreaks.',
   },
   {
     crop: 'Cotton',
     title: 'Whitefly',
-    content: 'Whiteflies feed on plant sap and spread viruses...',
+    content:
+      'Yellow rust, also known as stripe rust, appears as yellowish-orange stripes of spores on the leaves and leaf sheaths. It spreads rapidly under cool and humid conditions, especially in early winter. Effective control involves spraying Tebuconazole 25.9% EC at a dosage of 300 ml per acre. Application should begin when the initial rust spots appear, and repeated after 12–15 days if conditions persist. Timely application can prevent heavy losses and reduce the risk of epidemic outbreaks.',
   },
 ];
 
@@ -227,7 +232,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingTop: 50,
+    paddingTop: 30,
     paddingHorizontal: 16,
   },
   headerTitleRow: {
@@ -236,7 +241,7 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   itemBox: {
-    marginTop: 20,
+    marginTop: 2,
   },
   sectionTitle: {
     fontSize: 16,
@@ -246,8 +251,7 @@ const styles = StyleSheet.create({
   paragraph: {
     fontSize: 11,
     color: '#333',
-    marginTop: 6,
-    lineHeight: 20,
+    marginTop: 8,
   },
   highlightText: {
     backgroundColor: '#FFEB99',
@@ -273,11 +277,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 1,
-    top: -12,
+    top: -6,
   },
   navText: {
     fontSize: 8,
-    marginTop: 20,
+    marginTop: 24,
     color: '#000',
   },
   pageNumber: {
@@ -301,15 +305,15 @@ const styles = StyleSheet.create({
     minWidth: 230,
   },
   Name: {
-    fontSize: 24,
+    fontSize: 23,
     fontWeight: '500',
     color: BASE_COLORS.TEXT_GREEN,
   },
   leaveIcon: {
     width: 50,
     height: 50,
-    top: 18,
-    left: 222,
+    top: 14,
+    left: 206,
     position: 'absolute',
   },
   search: {

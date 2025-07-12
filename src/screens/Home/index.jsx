@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
+  TextInput,
+  Keyboard,
 } from 'react-native';
 import { ICONS, IMAGES } from '../../utils/appAssets';
 import BASE_COLORS from '../../utils/colors';
@@ -16,43 +18,71 @@ import RecentAIResultItem from '../../components/HomeComponents/RecentAIResultIt
 import { useNavigation } from '@react-navigation/native';
 const Home = () => {
   const navigation = useNavigation();
+  const [query, setQuery] = useState('');
+  const [showResult, setShowResult] = useState(false);
+
+  const handleSearch = () => {
+    if (query.trim().length > 0) {
+      Keyboard.dismiss();
+      setShowResult(true);
+    }
+  };
   const recentResults = [
     { id: '1', title: 'Fungicide suggestion for wheat' },
     { id: '2', title: 'Fungicide suggestion for rice' },
     // more items, if needed
   ];
+
   return (
     <ScrollView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.headerTitleRow}>
-          <Text style={styles.appName}>Welcome to SmartCropCare</Text>
+          <Text style={styles.appName}>Welcome to {'\n'}SmartCropCare</Text>
           <Image source={ICONS.LEAVES} style={styles.leaveIcon} />
         </View>
 
         <Image source={ICONS.NOTIFICATION} style={styles.notificationIcon} />
       </View>
       {/* Disease Box */}
-      <View style={styles.card}>
-        <View>
-          <Image source={ICONS.STAR} style={styles.starIcon} />
-        </View>
-
-        <Text style={styles.diseaseTitle}>
-          Describe your crop issue (e.g., fungus on barley)
-        </Text>
-
-        {/* <Text style={styles.diseaseText}>
-          The recommended treatment is Propiconazole 25% EC at a dosage of
-          200–250 ml per acre mixed in 200 liters of water. Spray in the morning
-          or evening, and repeat if needed. Refer to page 142 of the 2025 guide.
-        </Text> */}
-        {/* <CustomButton
-          title="View More Info"
-          style={{ flex: 1 }}
-          onPress={() => Navigation.navigate('Login')}
-        /> */}
+      <View style={styles.searchBox}>
+        <Image source={ICONS.STAR} style={styles.starIcon} />
+        <TextInput
+          placeholder="Describe your crop issue (e.g., fungus on barley)"
+          placeholderTextColor="#999"
+          value={query}
+          onChangeText={text => {
+            setQuery(text);
+            if (text.trim().length === 0) {
+              setShowResult(false); // Hide result when input is cleared
+            }
+          }}
+          onSubmitEditing={handleSearch}
+          style={styles.input}
+          returnKeyType="search"
+        />
       </View>
+
+      {showResult && (
+        <View style={styles.resultContainer}>
+          <Text style={styles.description}>
+            The recommended treatment is Propiconazole 25% EC at a dosage of
+            200–250 ml per acre mixed in 200 liters of water. Spray in the
+            morning or evening, and repeat if needed. Refer to page 142 of the
+            2025 guide.
+          </Text>
+          <CustomButton
+            title="View More Info"
+            onPress={() => navigation.navigate('search_result')}
+            buttonStyle={{
+              paddingVertical: verticalScale(12),
+              paddingHorizontal: moderateScale(10),
+              alignSelf: 'flex-start',
+            }}
+            textStyle={{ fontSize: moderateScale(10) }}
+          />
+        </View>
+      )}
       {/* Upgrade Card */}
       <View style={styles.upgradeCard}>
         <View style={styles.upgradeContent}>
@@ -154,6 +184,15 @@ const styles = StyleSheet.create({
     right: 0,
     top: 45,
   },
+  searchBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 12,
+    borderRadius: 20,
+    borderColor: BASE_COLORS.PRIMARY_LIGHT,
+    borderWidth: 1,
+    marginBottom: 10,
+  },
   card: {
     borderRadius: 20,
     flexDirection: 'row',
@@ -164,11 +203,17 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 16,
   },
+  input: {
+    flex: 1,
+    fontSize: 10,
+    fontWeight: '500',
+    color: BASE_COLORS.LIGHT_GRAY,
+  },
   starIcon: {
     width: 20,
     height: 20,
-    lineHeight: 50,
-    marginRight: 6,
+    marginRight: 10,
+    resizeMode: 'contain',
   },
   diseaseTitle: {
     fontSize: 10,
@@ -207,7 +252,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 16,
     marginBottom: 20,
-    marginTop: 14,
+    marginTop: 4,
   },
   upgradeContent: {
     flexDirection: 'row',
@@ -307,6 +352,18 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     color: BASE_COLORS.PRIMARY,
     marginTop: 6,
+    marginBottom: 20,
+  },
+  resultContainer: {
+    padding: 10,
+    borderRadius: 16,
+    borderColor: BASE_COLORS.PRIMARY_LIGHT,
+    borderWidth: 1,
+  },
+  description: {
+    fontSize: 12,
+    color: '#333',
+    marginTop: 10,
     marginBottom: 20,
   },
 });

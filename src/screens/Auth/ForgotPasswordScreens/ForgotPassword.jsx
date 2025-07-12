@@ -8,10 +8,7 @@ import BackButton from '../../../components/commonComponents/BackButton';
 import CustomTextInput from '../../../components/commonComponents/CustomTextInput';
 import CustomButton from '../../../components/commonComponents/CustomButton';
 import BASE_COLORS from '../../../utils/colors';
-
-const EmailUpdateSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Email is required'),
-});
+import { getValidationSchema } from '../../../utils/validationSchema';
 
 const ForgotPassword = () => {
   const Navigation = useNavigation();
@@ -27,7 +24,7 @@ const ForgotPassword = () => {
 
       <Formik
         initialValues={{ email: '' }}
-        validationSchema={EmailUpdateSchema}
+        validationSchema={getValidationSchema('emailUpdate')}
         onSubmit={values => {
           console.log('Form Data:', values);
           Navigation.navigate('verify_otp');

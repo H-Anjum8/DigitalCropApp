@@ -5,18 +5,31 @@ import ResetPasswordSuccess from '../screens/Auth/ForgotPasswordScreens/ResetPas
 import VerifyOTP from '../screens/Auth/ForgotPasswordScreens/VerifyOTP';
 import Login from '../screens/Auth/Login';
 import Signup from '../screens/Auth/Signup';
+import SignupDone from '../screens/Auth/SignupDone';
+import SignupOTPVerify from '../screens/Auth/SignupOTPVerify';
+import UploadProfileImage from '../screens/Auth/UploadProfileImage';
 import Home from '../screens/Home';
 import Guide from '../screens/Home/Guide';
 import AIResultDetail from '../screens/Home/HomeScreens/AIResultDetail';
 import AIResultsList from '../screens/Home/HomeScreens/AIResultsList';
 import Chat from '../screens/Home/HomeScreens/Chat';
 import Search from '../screens/Home/Search';
+import SearchDetails from '../screens/Home/Search/SearchDetails';
+import SearchResult from '../screens/Home/Search/SearchResult';
 import Setting from '../screens/Home/Setting';
+import ChangePassword from '../screens/Home/Setting/ChangePassword';
+import CurrentPlan from '../screens/Home/Setting/CurrentPlan';
+import EditProfile from '../screens/Home/Setting/EditProfile';
+import PersonalInformation from '../screens/Home/Setting/PersonalInformation';
+import PrivacyPolicy from '../screens/Home/Setting/PrivacyPolicy';
+import TermsAndConditions from '../screens/Home/Setting/TermsAndConditions';
 import IntroductionScreen from '../screens/IntroductionScreen';
 import Experts from '../screens/IntroductionScreen/Experts';
 import InstantAnswer from '../screens/IntroductionScreen/InstantAnswer';
 import SplashScreen from '../screens/SplashScreen';
 import SubscriptionScreen from '../screens/SubscriptionScreen';
+import Payment from '../screens/SubscriptionScreen/Payment';
+import SubcriptionDone from '../screens/SubscriptionScreen/SubcriptionDone';
 import { ICONS } from './appAssets';
 
 const Routes = {
@@ -110,6 +123,33 @@ const Routes = {
     },
     authRequired: false,
   },
+  SignupOTPVerify: {
+    name: 'signup_otp_verify',
+    component: SignupOTPVerify,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  UploadProfileImage: {
+    name: 'upload_profile_image',
+    component: UploadProfileImage,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  SignupDone: {
+    name: 'signup_done',
+    component: SignupDone,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
   Dashboard: {
     name: 'dashboard',
     component: BottomNavigation,
@@ -117,7 +157,7 @@ const Routes = {
       headerShown: false,
       gestureEnabled: false,
     },
-    authRequired: true,
+    authRequired: false,
   },
   SubscriptionScreen: {
     name: 'subscription',
@@ -126,7 +166,25 @@ const Routes = {
       headerShown: false,
       gestureEnabled: false,
     },
-    authRequired: true,
+    authRequired: false,
+  },
+  Payment: {
+    name: 'payment',
+    component: Payment,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  SubcriptionDone: {
+    name: 'subcription_done',
+    component: SubcriptionDone,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
   },
   Chat: {
     name: 'chat',
@@ -135,7 +193,7 @@ const Routes = {
       headerShown: false,
       gestureEnabled: false,
     },
-    authRequired: true,
+    authRequired: false,
   },
   AIResultsList: {
     name: 'ai_results_list',
@@ -144,7 +202,7 @@ const Routes = {
       headerShown: false,
       gestureEnabled: false,
     },
-    authRequired: true,
+    authRequired: false,
   },
   AIResultDetail: {
     name: 'ai_result_detail',
@@ -153,8 +211,9 @@ const Routes = {
       headerShown: false,
       gestureEnabled: false,
     },
-    authRequired: true,
+    authRequired: false,
   },
+
   Guide: {
     name: 'crop_guide',
     component: Guide,
@@ -162,7 +221,90 @@ const Routes = {
       headerShown: false,
       gestureEnabled: false,
     },
-    authRequired: true,
+    authRequired: false,
+  },
+  // Dashboard Search tab screens
+  SearchDetails: {
+    name: 'search_details',
+    component: SearchDetails,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  SearchResult: {
+    name: 'search_result',
+    component: SearchResult,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  // Setting screens
+  ChangePassword: {
+    name: 'change_password',
+    component: ChangePassword,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  PrivacyPolicy: {
+    name: 'privacy_policy',
+    component: PrivacyPolicy,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  TermsAndConditions: {
+    name: 'terms_and_conditions',
+    component: TermsAndConditions,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  PersonalInformation: {
+    name: 'personal_information',
+    component: PersonalInformation,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  EditProfile: {
+    name: 'edit_profile',
+    component: EditProfile,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  CurrentPlan: {
+    name: 'current_plan',
+    component: CurrentPlan,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
+  },
+  setting: {
+    name: 'setting',
+    component: Setting,
+    options: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+    authRequired: false,
   },
 };
 
@@ -177,6 +319,7 @@ export const BOTTOM_ROUTES = [
     icon: ICONS.HOME_WHITE,
     label: 'Home',
   },
+
   {
     name: 'guide',
     component: Guide,
@@ -187,6 +330,7 @@ export const BOTTOM_ROUTES = [
     icon: ICONS.GUIDE,
     label: 'Guide',
   },
+
   {
     name: 'search',
     component: Search,

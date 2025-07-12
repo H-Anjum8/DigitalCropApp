@@ -36,7 +36,7 @@ const ResetPasswordSuccess = ({ navigation }) => {
 
       <CustomButton
         title="Confirm"
-        onPress={() => navigation.navigate('dashboard')}
+        onPress={() => navigation.navigate('login_screen')}
         buttonStyle={{ paddingHorizontal: moderateScale(125) }}
         textStyle={{ fontSize: moderateScale(14) }}
       />
