@@ -8,8 +8,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
-import { moderateScale, verticalScale } from 'react-native-size-matters';
+import { moderateScale } from 'react-native-size-matters';
 import BackButton from '../../../components/commonComponents/BackButton';
 import CustomOTPInput from '../../../components/commonComponents/CustomOTPInput';
 import CustomButton from '../../../components/commonComponents/CustomButton';

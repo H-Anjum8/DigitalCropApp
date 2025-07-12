@@ -12,14 +12,10 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { moderateScale, verticalScale } from 'react-native-size-matters';
 import { useNavigation } from '@react-navigation/native';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
-
 import BASE_COLORS from '../../utils/colors';
 import CustomButton from '../../components/commonComponents/CustomButton';
 import BackButton from '../../components/commonComponents/BackButton';
 import { getValidationSchema } from '../../utils/validationSchema';
-
-// Yup Validation Schema
 
 const Payment = () => {
   const navigation = useNavigation();

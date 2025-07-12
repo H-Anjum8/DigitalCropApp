@@ -1,6 +1,12 @@
 // AIResultDetailScreen.js
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import BASE_COLORS from '../../../utils/colors';
 import { useNavigation } from '@react-navigation/native';
@@ -15,9 +21,17 @@ const AIResultDetail = ({ route }) => {
     <View style={styles.container}>
       <BackButton />
       <Text style={styles.title}>Recent AI Result</Text>
-      <View style={styles.resultBox}>
+      {/* <View style={styles.resultBox}>
         <Icon name="search-outline" size={22} color={BASE_COLORS.PRIMARY} />
         <Text style={styles.query}>{result.title}</Text>
+      </View> */}
+      <View style={styles.resultBox}>
+        <Icon name="search-outline" size={22} color={BASE_COLORS.PRIMARY} />
+        <TextInput
+          placeholder={result.title}
+          placeholderTextColor="#999"
+          style={styles.query}
+        />
       </View>
       <Text style={styles.description}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et urna
@@ -55,7 +69,7 @@ const styles = StyleSheet.create({
   resultBox: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 20,
+    paddingVertical: 8,
     paddingHorizontal: 8,
     marginVertical: 6,
     borderRadius: 12,

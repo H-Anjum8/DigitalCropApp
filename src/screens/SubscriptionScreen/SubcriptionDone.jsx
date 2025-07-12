@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
 import { moderateScale, verticalScale } from 'react-native-size-matters';
 import { ICONS } from '../../utils/appAssets';
 import CustomButton from '../../components/commonComponents/CustomButton';

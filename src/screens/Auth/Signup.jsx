@@ -7,7 +7,6 @@ import {
   Linking,
 } from 'react-native';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 import { useNavigation } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { moderateScale, verticalScale } from 'react-native-size-matters';

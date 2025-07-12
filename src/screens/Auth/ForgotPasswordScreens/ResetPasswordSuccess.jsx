@@ -1,14 +1,6 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Dimensions,
-  Image,
-} from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Image } from 'react-native';
 import { moderateScale } from 'react-native-size-matters';
-
 import CustomButton from '../../../components/commonComponents/CustomButton';
 import BASE_COLORS from '../../../utils/colors';
 import { ICONS } from '../../../utils/appAssets';

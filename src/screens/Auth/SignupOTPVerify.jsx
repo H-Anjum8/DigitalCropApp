@@ -7,15 +7,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 import { moderateScale, verticalScale } from 'react-native-size-matters';
 import { useNavigation } from '@react-navigation/native';
 import BackButton from '../../components/commonComponents/BackButton';
 import CustomButton from '../../components/commonComponents/CustomButton';
 import BASE_COLORS from '../../utils/colors';
 import { getValidationSchema } from '../../utils/validationSchema';
-
-// Validation schema
 
 const SignupOTPVerify = () => {
   const navigation = useNavigation();

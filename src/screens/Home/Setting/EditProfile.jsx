@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 import { verticalScale, moderateScale } from 'react-native-size-matters';
 import BASE_COLORS from '../../../utils/colors';
 import BackButton from '../../../components/commonComponents/BackButton';

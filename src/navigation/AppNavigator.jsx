@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Routes, { getAuthScreens, getProtectedScreens } from '../utils/routlist'; // ✅ Must match your path
+import BASE_COLORS from '../utils/colors';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   const [showSplash, setShowSplash] = useState(true);
-  const isAuthenticated = false; // Replace with real auth logic
+  const isAuthenticated = false;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -25,6 +26,8 @@ const AppNavigator = () => {
             elevation: 0,
             shadowOpacity: 0,
           },
+          contentStyle: { backgroundColor: BASE_COLORS.WHITE }, // white background for all screens
+
           gestureEnabled: false,
           headerBackTitleVisible: false,
         }}

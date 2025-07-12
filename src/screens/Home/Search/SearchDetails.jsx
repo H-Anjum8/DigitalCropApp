@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, Image } from 'react-native';
-import { ICONS, IMAGES } from '../../../utils/appAssets';
+import { ICONS } from '../../../utils/appAssets';
 import BASE_COLORS from '../../../utils/colors';
 import CustomButton from '../../../components/commonComponents/CustomButton';
 import { moderateScale, verticalScale } from 'react-native-size-matters';

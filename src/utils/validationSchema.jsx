@@ -1,7 +1,5 @@
 import * as Yup from 'yup';
 
-const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,6}$/;
-
 export const getValidationSchema = formType => {
   switch (formType) {
     case 'signup':

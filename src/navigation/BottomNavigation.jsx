@@ -29,7 +29,7 @@ const BottomNavigation = () => {
                 style={{
                   width: 24,
                   height: 24,
-                  tintColor: color, // ✅ React Navigation passes this color automatically
+                  tintColor: color,
                 }}
                 resizeMode="contain"
               />

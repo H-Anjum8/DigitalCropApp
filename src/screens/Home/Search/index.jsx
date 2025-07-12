@@ -31,7 +31,6 @@ const Search = () => {
         <Text style={styles.header}>Smart AI Search</Text>
         <Image source={ICONS.NOTIFICATION} style={styles.notificationIcon} />
       </View>
-
       <View style={styles.searchBox}>
         <Image source={ICONS.STAR} style={styles.starIcon} />
         <TextInput

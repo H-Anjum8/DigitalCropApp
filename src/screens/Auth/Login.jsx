@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 import { moderateScale } from 'react-native-size-matters';
 import { useNavigation } from '@react-navigation/native';
 import COLORS from '../../utils/colors';
@@ -29,14 +28,7 @@ const Login = () => {
           Navigation.navigate('dashboard');
         }}
       >
-        {({
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          values,
-          errors,
-          touched,
-        }) => (
+        {({ handleChange, handleSubmit, values, errors, touched }) => (
           <>
             <CustomTextInput
               placeholder="Phone Number or Email"
@@ -92,6 +84,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 22,
+    // backgroundColor: BASE_COLORS.WHITE,
   },
   heading: {
     fontSize: 28,

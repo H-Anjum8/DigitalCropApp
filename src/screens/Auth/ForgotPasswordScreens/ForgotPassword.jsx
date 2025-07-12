@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 import { moderateScale } from 'react-native-size-matters';
 import { useNavigation } from '@react-navigation/native';
 import BackButton from '../../../components/commonComponents/BackButton';
@@ -30,14 +29,7 @@ const ForgotPassword = () => {
           Navigation.navigate('verify_otp');
         }}
       >
-        {({
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          values,
-          errors,
-          touched,
-        }) => (
+        {({ handleChange, handleSubmit, values, errors, touched }) => (
           <>
             <View style={styles.formContainer}>
               <CustomTextInput

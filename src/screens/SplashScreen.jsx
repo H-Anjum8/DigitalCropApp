@@ -1,11 +1,12 @@
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { IMAGES } from '../utils/appAssets';
+import BASE_COLORS from '../utils/colors';
 
 const SplashScreen = () => {
   return (
     <ImageBackground
-      source={IMAGES.SPLASH_SCREEN} // 🔁 Replace with your actual image path
+      source={IMAGES.SPLASH_SCREEN}
       style={styles.background}
       resizeMode="cover"
     >
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     // Optional: backgroundColor: 'rgba(0,0,0,0.3)' to darken image
   },
   text: {
-    color: '#fff', // Adjust text color based on your image
+    color: BASE_COLORS.WHITE,
     fontSize: 24,
     fontWeight: 'bold',
   },
